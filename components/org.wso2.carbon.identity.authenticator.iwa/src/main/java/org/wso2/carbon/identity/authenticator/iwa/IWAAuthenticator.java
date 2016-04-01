@@ -23,6 +23,7 @@ import org.apache.commons.logging.LogFactory;
 import org.osgi.framework.BundleContext;
 import org.wso2.carbon.CarbonConstants;
 import org.wso2.carbon.core.common.AuthenticationException;
+import org.wso2.carbon.core.security.AuthenticatorsConfiguration;
 import org.wso2.carbon.core.services.authentication.AbstractAuthenticator;
 import org.wso2.carbon.core.services.authentication.AuthenticationFailureException;
 import org.wso2.carbon.core.services.authentication.AuthenticatorHelper;
@@ -125,6 +126,12 @@ public class IWAAuthenticator extends AbstractAuthenticator {
 
     @Override
     public boolean isDisabled() {
+        AuthenticatorsConfiguration authenticatorsConfiguration = AuthenticatorsConfiguration.getInstance();
+        AuthenticatorsConfiguration.AuthenticatorConfig authenticatorConfig =
+                authenticatorsConfiguration.getAuthenticatorConfig(AUTHENTICATOR_NAME);
+        if (authenticatorConfig != null) {
+            return authenticatorConfig.isDisabled();
+        }
         return false;
     }
 
