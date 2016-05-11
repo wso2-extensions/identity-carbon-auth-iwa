@@ -48,6 +48,11 @@
                 <artifactId>waffle-jna</artifactId>
                 <version>${waffle-jna.wso2.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon.identity</groupId>
+                <artifactId>org.wso2.carbon.identity.authenticator.iwa.stub</artifactId>
+                <version>${identity-local-auth-iwa.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -134,6 +139,7 @@
     </modules>
 
     <properties>
+        <identity-local-auth-iwa.version>5.1.0</identity-local-auth-iwa.version>
         <waffle-jna.wso2.version>1.6.wso2v4</waffle-jna.wso2.version>
         <waffle.imp.pkg.version.range>[1.6.wso2v4, 2.0)</waffle.imp.pkg.version.range>
         <waffle-jna.imp.pkg.version.range>[1.6.wso2v1, 2.0)</waffle-jna.imp.pkg.version.range>
