@@ -76,7 +76,7 @@
                         </Private-Package>
                         <Export-Package>
                             !org.wso2.carbon.identity.authenticator.iwa.internal,
-                            org.wso2.carbon.identity.authenticator.iwa.*,
+                            org.wso2.carbon.identity.authenticator.iwa.*; version="${identity.carbon.auth.iwa.export.version}"
                         </Export-Package>
                         <Import-Package>
                             javax.servlet.http,
