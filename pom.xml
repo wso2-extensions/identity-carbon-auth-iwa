@@ -45,16 +45,7 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
-                <artifactId>org.wso2.carbon.identity.authenticator.iwa.stub</artifactId>
-                <version>${identity.local.auth.iwa.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
-                <artifactId>org.wso2.carbon.identity.base</artifactId>
-                <version>${carbon.identity.framework.version}</version>
-            </dependency>
+            <!-- Carbon Kernel dependencies -->
             <dependency>
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.core</artifactId>
@@ -85,10 +76,48 @@
                 <artifactId>org.wso2.carbon.utils</artifactId>
                 <version>${carbon.kernel.version}</version>
             </dependency>
+
+            <!-- Carbon Identity Framework dependencies -->
+            <dependency>
+                <groupId>org.wso2.carbon.identity</groupId>
+                <artifactId>org.wso2.carbon.identity.base</artifactId>
+                <version>${carbon.identity.framework.version}</version>
+            </dependency>
+
+            <!-- Orbit dependencies -->
             <dependency>
                 <groupId>org.wso2.orbit.com.github.dblock.waffle</groupId>
                 <artifactId>waffle-jna</artifactId>
                 <version>${waffle-jna.wso2.version}</version>
+            </dependency>
+
+            <!-- Identity Carbon Auth IWA dependencies-->
+            <dependency>
+                <groupId>org.wso2.carbon.identity</groupId>
+                <artifactId>org.wso2.carbon.identity.authenticator.iwa</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon.identity</groupId>
+                <artifactId>org.wso2.carbon.identity.authenticator.iwa.stub</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon.identity</groupId>
+                <artifactId>org.wso2.carbon.identity.authenticator.iwa.ui</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon.identity</groupId>
+                <artifactId>org.wso2.carbon.identity.authenticator.iwa.server.feature</artifactId>
+                <version>${project.version}</version>
+                <type>zip</type>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon.identity</groupId>
+                <artifactId>org.wso2.carbon.identity.authenticator.iwa.ui.feature</artifactId>
+                <version>${project.version}</version>
+                <type>zip</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -251,6 +280,7 @@
         <module>features/org.wso2.carbon.identity.authenticator.iwa.feature</module>
         <module>features/org.wso2.carbon.identity.authenticator.iwa.server.feature</module>
         <module>features/org.wso2.carbon.identity.authenticator.iwa.ui.feature</module>
+        <module>service-stubs/identity</module>
     </modules>
 
     <properties>
@@ -260,7 +290,6 @@
         <identity.local.auth.iwa.import.version.range>[5.0.0, 6.0.0)</identity.local.auth.iwa.import.version.range>
 
         <identity.carbon.auth.iwa.export.version>${project.version}</identity.carbon.auth.iwa.export.version>
-        <identity.local.auth.iwa.version>5.1.0</identity.local.auth.iwa.version>
 
         <!--Carbon Kernel Version-->
         <carbon.kernel.version>4.4.7</carbon.kernel.version>
