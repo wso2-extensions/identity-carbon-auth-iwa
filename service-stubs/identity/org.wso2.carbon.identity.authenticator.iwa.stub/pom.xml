@@ -87,7 +87,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.wso2.carbon.identity.authenticator.iwa.stub.*;version="${identity.local.auth.iwa.export.version}"
+                            org.wso2.carbon.identity.authenticator.iwa.stub.*;version="${identity.carbon.auth.iwa.export.version}"
                         </Export-Package>
                     </instructions>
                 </configuration>
