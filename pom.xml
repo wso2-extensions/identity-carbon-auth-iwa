@@ -84,6 +84,18 @@
                 <version>${carbon.identity.framework.version}</version>
             </dependency>
 
+            <!-- Axis2 dependencies -->
+            <dependency>
+                <groupId>org.apache.axis2.wso2</groupId>
+                <artifactId>axis2</artifactId>
+                <version>${axis2.wso2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.axis2.wso2</groupId>
+                <artifactId>axis2-client</artifactId>
+                <version>${axis2.wso2.version}</version>
+            </dependency>
+
             <!-- Orbit dependencies -->
             <dependency>
                 <groupId>org.wso2.orbit.com.github.dblock.waffle</groupId>
