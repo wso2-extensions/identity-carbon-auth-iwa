@@ -24,7 +24,7 @@
         <version>1</version>
     </parent>
 
-    <groupId>org.wso2.carbon.identity</groupId>
+    <groupId>org.wso2.carbon.identity.carbon.auth.iwa</groupId>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>identity-carbon-auth-iwa</artifactId>
     <version>5.1.3-SNAPSHOT</version>
@@ -79,7 +79,7 @@
 
             <!-- Carbon Identity Framework dependencies -->
             <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
+                <groupId>org.wso2.carbon.identity.framework</groupId>
                 <artifactId>org.wso2.carbon.identity.base</artifactId>
                 <version>${carbon.identity.framework.version}</version>
             </dependency>
@@ -105,28 +105,28 @@
 
             <!-- Identity Carbon Auth IWA dependencies-->
             <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
+                <groupId>org.wso2.carbon.identity.carbon.auth.iwa</groupId>
                 <artifactId>org.wso2.carbon.identity.authenticator.iwa</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
+                <groupId>org.wso2.carbon.identity.carbon.auth.iwa</groupId>
                 <artifactId>org.wso2.carbon.identity.authenticator.iwa.stub</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
+                <groupId>org.wso2.carbon.identity.carbon.auth.iwa</groupId>
                 <artifactId>org.wso2.carbon.identity.authenticator.iwa.ui</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
+                <groupId>org.wso2.carbon.identity.carbon.auth.iwa</groupId>
                 <artifactId>org.wso2.carbon.identity.authenticator.iwa.server.feature</artifactId>
                 <version>${project.version}</version>
                 <type>zip</type>
             </dependency>
             <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
+                <groupId>org.wso2.carbon.identity.carbon.auth.iwa</groupId>
                 <artifactId>org.wso2.carbon.identity.authenticator.iwa.ui.feature</artifactId>
                 <version>${project.version}</version>
                 <type>zip</type>
