@@ -297,7 +297,7 @@
 
     <properties>
         <!--Carbon Identity Framework Version-->
-        <carbon.identity.framework.version>5.5.0-SNAPSHOT</carbon.identity.framework.version>
+        <carbon.identity.framework.version>5.5.0</carbon.identity.framework.version>
         <carbon.identity.framework.import.version.range>[5.0.0, 6.0.0)</carbon.identity.framework.import.version.range>
         <identity.local.auth.iwa.import.version.range>[5.0.0, 6.0.0)</identity.local.auth.iwa.import.version.range>
 
