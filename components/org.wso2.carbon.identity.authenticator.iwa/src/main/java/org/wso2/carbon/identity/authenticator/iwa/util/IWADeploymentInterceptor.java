@@ -29,6 +29,7 @@ import org.apache.axis2.engine.AxisObserver;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.neethi.Policy;
+import org.wso2.carbon.identity.authenticator.iwa.IWAException;
 import org.wso2.carbon.identity.base.IdentityBaseUtil;
 
 import java.util.ArrayList;
@@ -52,12 +53,9 @@ public class IWADeploymentInterceptor implements AxisObserver {
         // Get the RelyingParty Service to update security policy with keystore information
         service = config.getService(IWA_SERVICE_NAME);
         if (service == null) {
-            String msg = IWA_SERVICE_NAME + " is not available in the Configuration Context";
-            log.error(msg);
+            throw new IWAException(IWA_SERVICE_NAME + " is not available in the Configuration Context");
         }
-
         // Create a Rampart Config with default crypto information
-        //Policy rampartConfig = IdentityBaseUtil.getDefaultRampartConfig();
         Policy rampartConfig = IdentityBaseUtil.getDefaultRampartConfig();
         // Add the RampartConfig to service policy
         service.getPolicySubject().attachPolicy(rampartConfig);
