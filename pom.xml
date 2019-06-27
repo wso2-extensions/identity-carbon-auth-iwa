@@ -338,7 +338,7 @@
         <!-- Axis2 Version-->
         <axis2.osgi.version.range>[1.6.1.wso2v12, 2.0.0)</axis2.osgi.version.range>
 
-        <waffle-jna.wso2.version>1.6.wso2v5</waffle-jna.wso2.version>
+        <waffle-jna.wso2.version>1.6.wso2v6</waffle-jna.wso2.version>
         <waffle.imp.pkg.version.range>[1.6.wso2v5, 2.0)</waffle.imp.pkg.version.range>
         <waffle-jna.imp.pkg.version.range>[1.6.wso2v1, 2.0)</waffle-jna.imp.pkg.version.range>
         <neethi.osgi.version.range>[2.0.4.wso2v4,3.0.0)</neethi.osgi.version.range>
