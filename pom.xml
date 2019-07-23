@@ -21,7 +21,7 @@
     <parent>
         <groupId>org.wso2</groupId>
         <artifactId>wso2</artifactId>
-        <version>1</version>
+        <version>1.2</version>
     </parent>
 
     <groupId>org.wso2.carbon.identity.carbon.auth.iwa</groupId>
@@ -272,6 +272,25 @@
                 <artifactId>buildnumber-maven-plugin</artifactId>
                 <version>${maven.buildnumber.plugin.version}</version>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <!--This parameter disables doclint-->
+                            <doclint>none</doclint>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
@@ -286,14 +305,14 @@
 
     <properties>
         <!--Carbon Identity Framework Version-->
-        <carbon.identity.framework.version>5.13.4</carbon.identity.framework.version>
-        <carbon.identity.framework.import.version.range>[5.13.0, 6.0.0)</carbon.identity.framework.import.version.range>
-        <identity.local.auth.iwa.import.version.range>[5.2.0, 6.0.0)</identity.local.auth.iwa.import.version.range>
+        <carbon.identity.framework.version>5.14.0</carbon.identity.framework.version>
+        <carbon.identity.framework.import.version.range>[5.14.0, 6.0.0)</carbon.identity.framework.import.version.range>
+        <identity.local.auth.iwa.import.version.range>[5.3.0, 6.0.0)</identity.local.auth.iwa.import.version.range>
 
         <identity.carbon.auth.iwa.export.version>${project.version}</identity.carbon.auth.iwa.export.version>
 
         <!--Carbon Kernel Version-->
-        <carbon.kernel.version>4.4.7</carbon.kernel.version>
+        <carbon.kernel.version>4.5.0-m3</carbon.kernel.version>
         <carbon.kernel.package.import.version.range>[4.5.0, 5.0.0)</carbon.kernel.package.import.version.range>
         <carbon.kernel.registry.imp.pkg.version>[1.0.1, 2.0.0)</carbon.kernel.registry.imp.pkg.version>
 
