@@ -30,51 +30,50 @@ import org.wso2.carbon.identity.authenticator.iwa.util.IWADeploymentInterceptor;
 import org.wso2.carbon.registry.core.service.RegistryService;
 import org.wso2.carbon.user.core.service.RealmService;
 import org.wso2.carbon.utils.ConfigurationContextService;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Deactivate;
+import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.annotations.ReferenceCardinality;
+import org.osgi.service.component.annotations.ReferencePolicy;
 
-/**
- * @scr.component name="iwa.authenticator.dscomponent" immediate="true"
- * @scr.reference name="registry.service"
- * interface="org.wso2.carbon.registry.core.service.RegistryService"
- * cardinality="1..1" policy="dynamic" bind="setRegistryService"
- * unbind="unsetRegistryService"
- * @scr.reference name="user.realmservice.default"
- * interface="org.wso2.carbon.user.core.service.RealmService"
- * cardinality="1..1" policy="dynamic" bind="setRealmService"
- * unbind="unsetRealmService"
- * @scr.reference name="configuration.context.service"
- * interface="org.wso2.carbon.utils.ConfigurationContextService"
- * cardinality="1..1" policy="dynamic"
- * bind="setConfigurationContextService"
- * unbind="unsetConfigurationContextService"
- */
+@Component(
+        name = "iwa.authenticator.dscomponent",
+        immediate = true)
 public class IWAAuthenticatorDSComponent {
 
     private static final Log log = LogFactory.getLog(IWAAuthenticatorDSComponent.class);
-    private static LoginSubscriptionManagerServiceImpl loginSubscriptionManagerServiceImpl =
-            new LoginSubscriptionManagerServiceImpl();
+
+    private static LoginSubscriptionManagerServiceImpl loginSubscriptionManagerServiceImpl = new LoginSubscriptionManagerServiceImpl();
+
     private static ConfigurationContextService configurationContextService;
 
+    @Activate
     protected void activate(ComponentContext ctxt) {
         try {
             BundleContext bc = ctxt.getBundleContext();
             bc.registerService(ServerAuthenticator.class.getName(), new IWAAuthenticator(), null);
-            bc.registerService(LoginSubscriptionManagerService.class.getName(),
-                    loginSubscriptionManagerServiceImpl, null);
+            bc.registerService(LoginSubscriptionManagerService.class.getName(), loginSubscriptionManagerServiceImpl, null);
             IWABEDataHolder.getInstance().setContext(bc);
-            ConfigurationContext configContext =
-                    configurationContextService.getServerConfigContext();
+            ConfigurationContext configContext = configurationContextService.getServerConfigContext();
             IWADeploymentInterceptor.populateRampartConfig(configContext.getAxisConfiguration());
-
             log.debug("Carbon Core Services bundle is activated ");
         } catch (Throwable e) {
             log.error("Failed to activate Carbon Core Services bundle ", e);
         }
     }
 
+    @Deactivate
     protected void deactivate(ComponentContext ctxt) {
         log.debug("Carbon Core Services bundle is deactivated ");
     }
 
+    @Reference(
+            name = "registry.service",
+            service = org.wso2.carbon.registry.core.service.RegistryService.class,
+            cardinality = ReferenceCardinality.MANDATORY,
+            policy = ReferencePolicy.DYNAMIC,
+            unbind = "unsetRegistryService")
     protected void setRegistryService(RegistryService registryService) {
         IWABEDataHolder.getInstance().setRegistryService(registryService);
     }
@@ -83,6 +82,12 @@ public class IWAAuthenticatorDSComponent {
         IWABEDataHolder.getInstance().setRegistryService(null);
     }
 
+    @Reference(
+            name = "user.realmservice.default",
+            service = org.wso2.carbon.user.core.service.RealmService.class,
+            cardinality = ReferenceCardinality.MANDATORY,
+            policy = ReferencePolicy.DYNAMIC,
+            unbind = "unsetRealmService")
     protected void setRealmService(RealmService realmService) {
         IWABEDataHolder.getInstance().setRealmService(realmService);
     }
@@ -91,6 +96,12 @@ public class IWAAuthenticatorDSComponent {
         IWABEDataHolder.getInstance().setRealmService(null);
     }
 
+    @Reference(
+            name = "configuration.context.service",
+            service = org.wso2.carbon.utils.ConfigurationContextService.class,
+            cardinality = ReferenceCardinality.MANDATORY,
+            policy = ReferencePolicy.DYNAMIC,
+            unbind = "unsetConfigurationContextService")
     protected void setConfigurationContextService(ConfigurationContextService configurationContextService) {
         log.debug("Receiving ConfigurationContext Service");
         IWAAuthenticatorDSComponent.configurationContextService = configurationContextService;

@@ -79,8 +79,6 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Bundle-Activator>org.wso2.carbon.identity.authenticator.iwa.ui.internal.Activator
-                        </Bundle-Activator>
                         <Private-Package>org.wso2.carbon.identity.authenticator.iwa.ui.internal</Private-Package>
                         <Import-Package>
                             javax.servlet.*; version="${imp.pkg.version.javax.servlet}",
