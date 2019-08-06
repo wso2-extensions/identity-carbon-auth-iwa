@@ -21,6 +21,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Deactivate;
 import org.wso2.carbon.CarbonConstants;
 import org.wso2.carbon.identity.authenticator.iwa.ui.IWAUIAuthenticator;
 import org.wso2.carbon.ui.CarbonUIAuthenticator;
@@ -34,11 +37,12 @@ import java.util.Hashtable;
  * ServerConfiguration object is not available to this bundle. Therefore we read properties but do
  * not keep a reference to it.
  */
-public class Activator implements BundleActivator {
+@Component(name = "org.wso2.carbon.identity.authenticator.iwa.ui", immediate = true)
+public class Activator {
 
     private static final Log log = LogFactory.getLog(Activator.class);
 
-    @Override
+    @Activate
     public void start(BundleContext bc) throws Exception {
         IWAUIAuthenticator authenticator = new IWAUIAuthenticator();
         Hashtable<String, String> props = new Hashtable<String, String>();
@@ -49,7 +53,7 @@ public class Activator implements BundleActivator {
         }
     }
 
-    @Override
+    @Deactivate
     public void stop(BundleContext bc) throws Exception {
         throw new UnsupportedOperationException();
     }
