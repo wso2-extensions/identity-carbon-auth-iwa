@@ -19,7 +19,6 @@ package org.wso2.carbon.identity.authenticator.iwa.ui.internal;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -43,7 +42,8 @@ public class Activator {
     private static final Log log = LogFactory.getLog(Activator.class);
 
     @Activate
-    public void start(BundleContext bc) throws Exception {
+    public void start(BundleContext bc) {
+
         IWAUIAuthenticator authenticator = new IWAUIAuthenticator();
         Hashtable<String, String> props = new Hashtable<String, String>();
         props.put(CarbonConstants.AUTHENTICATOR_TYPE, authenticator.getAuthenticatorName());
@@ -54,8 +54,10 @@ public class Activator {
     }
 
     @Deactivate
-    public void stop(BundleContext bc) throws Exception {
-        throw new UnsupportedOperationException();
-    }
+    public void stop(BundleContext bc) {
 
+        if (log.isDebugEnabled()) {
+            log.debug("Integrated Windows Authenticator deactivated in the system");
+        }
+    }
 }
