@@ -305,14 +305,14 @@
 
     <properties>
         <!--Carbon Identity Framework Version-->
-        <carbon.identity.framework.version>5.14.0</carbon.identity.framework.version>
-        <carbon.identity.framework.import.version.range>[5.14.0, 6.0.0)</carbon.identity.framework.import.version.range>
+        <carbon.identity.framework.version>5.14.67</carbon.identity.framework.version>
+        <carbon.identity.framework.import.version.range>[5.14.67, 6.0.0)</carbon.identity.framework.import.version.range>
         <identity.local.auth.iwa.import.version.range>[5.3.0, 6.0.0)</identity.local.auth.iwa.import.version.range>
 
         <identity.carbon.auth.iwa.export.version>${project.version}</identity.carbon.auth.iwa.export.version>
 
         <!--Carbon Kernel Version-->
-        <carbon.kernel.version>4.5.0-m3</carbon.kernel.version>
+        <carbon.kernel.version>4.5.0</carbon.kernel.version>
         <carbon.kernel.feature.version>4.5.0</carbon.kernel.feature.version>
         <carbon.kernel.package.import.version.range>[4.5.0, 5.0.0)</carbon.kernel.package.import.version.range>
         <carbon.kernel.registry.imp.pkg.version>[1.0.1, 2.0.0)</carbon.kernel.registry.imp.pkg.version>
@@ -332,7 +332,7 @@
         <pax.logging.api.version>1.10.1</pax.logging.api.version>
 
         <!--Orbit Version-->
-        <axis2.wso2.version>1.6.1-wso2v37</axis2.wso2.version>
+        <axis2.wso2.version>1.6.1-wso2v38</axis2.wso2.version>
 
         <!--Maven Plugin Version-->
         <carbon.p2.plugin.version>1.5.3</carbon.p2.plugin.version>
@@ -347,7 +347,7 @@
         <axiom.osgi.version.range>[1.2.11, 2.0.0)</axiom.osgi.version.range>
 
         <!-- Axis2 Version-->
-        <axis2.osgi.version.range>[1.6.1.wso2v12, 2.0.0)</axis2.osgi.version.range>
+        <axis2.osgi.version.range>[1.6.1.wso2v38, 2.0.0)</axis2.osgi.version.range>
 
         <waffle-jna.wso2.version>1.6.wso2v6</waffle-jna.wso2.version>
         <waffle.imp.pkg.version.range>[1.6.wso2v5, 2.0)</waffle.imp.pkg.version.range>
