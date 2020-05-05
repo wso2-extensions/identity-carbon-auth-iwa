@@ -29,8 +29,8 @@ import org.wso2.carbon.CarbonConstants;
 import org.wso2.carbon.core.common.AuthenticationException;
 import org.wso2.carbon.core.security.AuthenticatorsConfiguration;
 import org.wso2.carbon.identity.authenticator.iwa.stub.client.IWAAuthenticatorStub;
-import org.wso2.carbon.identity.base.IdentityBaseUtil;
 import org.wso2.carbon.identity.base.IdentityException;
+import org.wso2.carbon.identity.sts.mgt.base.IdentityBaseUtil;
 import org.wso2.carbon.ui.CarbonUIUtil;
 import org.wso2.carbon.ui.DefaultCarbonAuthenticator;
 

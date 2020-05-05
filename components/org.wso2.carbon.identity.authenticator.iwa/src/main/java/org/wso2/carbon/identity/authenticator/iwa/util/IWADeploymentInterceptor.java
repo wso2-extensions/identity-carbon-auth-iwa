@@ -30,7 +30,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.neethi.Policy;
 import org.wso2.carbon.identity.authenticator.iwa.IWAException;
-import org.wso2.carbon.identity.base.IdentityBaseUtil;
+import org.wso2.carbon.identity.sts.mgt.base.IdentityBaseUtil;
 
 import java.util.ArrayList;
 
