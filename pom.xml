@@ -86,6 +86,13 @@
                 <version>${carbon.identity.framework.version}</version>
             </dependency>
 
+            <!--Inbound Auth STS dependencies-->
+            <dependency>
+                <groupId>org.wso2.carbon.identity.inbound.auth.sts</groupId>
+                <artifactId>org.wso2.carbon.identity.sts.mgt</artifactId>
+                <version>${inbound.auth.sts.version}</version>
+            </dependency>
+
             <!-- Axis2 dependencies -->
             <dependency>
                 <groupId>org.apache.axis2.wso2</groupId>
@@ -305,11 +312,15 @@
 
     <properties>
         <!--Carbon Identity Framework Version-->
-        <carbon.identity.framework.version>5.14.67</carbon.identity.framework.version>
+        <carbon.identity.framework.version>5.18.0</carbon.identity.framework.version>
         <carbon.identity.framework.import.version.range>[5.14.67, 6.0.0)</carbon.identity.framework.import.version.range>
-        <identity.local.auth.iwa.import.version.range>[5.3.0, 6.0.0)</identity.local.auth.iwa.import.version.range>
 
+        <identity.local.auth.iwa.import.version.range>[5.3.0, 6.0.0)</identity.local.auth.iwa.import.version.range>
         <identity.carbon.auth.iwa.export.version>${project.version}</identity.carbon.auth.iwa.export.version>
+
+        <!--Inbound Auth STS Version-->
+        <inbound.auth.sts.version>5.6.0</inbound.auth.sts.version>
+        <inbound.auth.sts.version.range>[5.5.0, 6.0.0)</inbound.auth.sts.version.range>
 
         <!--Carbon Kernel Version-->
         <carbon.kernel.version>4.6.0</carbon.kernel.version>

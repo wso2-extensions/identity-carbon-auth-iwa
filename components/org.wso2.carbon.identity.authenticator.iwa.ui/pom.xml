@@ -64,6 +64,10 @@
             <artifactId>org.wso2.carbon.identity.base</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.wso2.carbon.identity.inbound.auth.sts</groupId>
+            <artifactId>org.wso2.carbon.identity.sts.mgt</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.wso2.orbit.com.github.dblock.waffle</groupId>
             <artifactId>waffle-jna</artifactId>
         </dependency>
@@ -94,6 +98,7 @@
                             org.wso2.carbon.core.*; version="${carbon.kernel.package.import.version.range}",
                             org.wso2.carbon.ui; version="${carbon.kernel.package.import.version.range}",
 
+                            org.wso2.carbon.identity.sts.mgt.base; version="${inbound.auth.sts.version.range}",
                             org.wso2.carbon.identity.base; version="${carbon.identity.framework.import.version.range}",
                             org.wso2.carbon.identity.authenticator.iwa.stub.client;
                             version="${identity.local.auth.iwa.import.version.range}",
